@@ -7,15 +7,58 @@
 <meta name="robots" content="index, follow" />
 <meta name="googlebot" content="index, follow" />
 <meta name="author" content="codetker" />
-    <title>蚁群系统</title>
-<!-- <link href="css/reset.css" type="text/css" rel="Stylesheet" /> -->
-<!-- <link href="css/master.css" type="text/css" rel="Stylesheet" /> -->
-<!-- <script type="text/javascript" src="js/jquery-1.11.0.js"></script> -->
+    <title>ACS蚁群系统解TSP问题的javascript实现</title>
+<link href="css/reset.css" type="text/css" rel="Stylesheet" /> 
+<link href="css/master.css" type="text/css" rel="Stylesheet" /> 
+
+<script type="text/javascript" src="js/functions.js"></script>
 <script type="text/javascript" src="js/AntSystem.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="js/action.js"></script>
+
+<!-- <script type="text/javascript" src="js/test.js"></script> -->
 </head>
 
 <body>
     <div class="wrap">
+    	<div class="center">
+    		<div class="left">
+    			请输入城市的规模n(在3和100之间)：
+    		</div>
+    		<div class="right">
+    			<input type="bumber" class="num" name="num" min="3" max="100"/>
+    			<input type="submit" class="getNum" name="getNum" value="确认"/>
+    		</div>
+    	</div>
+    	<div class="center">
+    		<div class="left">
+    			输入状态：
+    		</div>
+    		<div class="right">
+    			<span class="state"></span>
+    		</div>
+    	</div>
+    	<div class="dataInput center">
+    		<div class="left">
+    			请输入城市的坐标矩阵：
+    		</div>
+    		<div class="right">
+    			<div class="MartrixInput">
+    				<ul></ul>
+    			</div>
+    			<input type="submit" class="getMartrix" name="getMartrix" value="确认"/>
+    		</div>
+    	</div>
+    	<div class="dataOutput center">
+    		<div class="left">
+    			求解得出最优路径长度：</br>
+                求解得出最优路径走法：
+    		</div>
+    		<div class="right">
+    			<p class="shortestL"></p>
+                <p class="route"></p>
+    		</div>
+    	</div>
     </div>
 </body>
 </html>
