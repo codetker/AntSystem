@@ -45,7 +45,10 @@ $(document).ready(function(){
 	 		C[i][0]=$(obj).eq(i).children().eq(0).val();
 	 		C[i][1]=$(obj).eq(i).children().eq(1).val();
 	 	}
-	 	[last,lastRoute]=AntSystem(C);
+	 	var retTmp=AntSystem(C);
+	 	last=retTmp[0];
+	 	lastRoute=retTmp[1];
+	 	// [last,lastRoute]=AntSystem(C);
 	 	$(".shortestL").text(last);
 	 	var out=$(".route");
 	 	for(var i=0;i<antNum;i++){

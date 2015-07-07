@@ -13,7 +13,11 @@
 				temp=i;
 			}
 		}
-		return [temp,sMin];
+		var ret=new Array();
+		ret.push(temp);
+		ret.push(sMin);
+		// return [temp,sMin];
+		return ret;
 	}
 
 //一位数组求和
@@ -36,7 +40,11 @@
 		var s;  //x处蚂蚁到其它任一城市去的距离之和(到本地为0)
 		var l; //其实可以作为参数传进来，但也可以自己从矩阵里获得
 		var result=new Array();  //按比例每个分段,存在相等，则有两个数值相同;最后一个应该为1
-		[s,l,result]=sum(x,E);
+		// [s,l,result]=sum(x,E);   //仅ff支持
+		var ret=sum(x,E);
+		s=ret[0];
+		l=ret[1];
+		result=ret[2];
 		for(var i=0; i<l; i++){
 			if(result[i]>k){
 				return i;   //查看在哪个区间，来确定蚂蚁的走向
@@ -62,7 +70,12 @@
 				result[j]=result[j-1]+temp[j]/s;
 			}
 		}
-		return [s,len,result];  
+		var ret=new Array();
+		ret.push(s);
+		ret.push(len);
+		ret.push(result);
+		// return [s,len,result]; 
+		return ret; 
 		/*
 		返回s:sum(E[x,:])
 		返回len:返回m

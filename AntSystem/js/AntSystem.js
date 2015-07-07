@@ -106,7 +106,10 @@ function AntSystem(C){ //传入城市坐标矩阵即可
 				sAll[k]+= D[ road[k][k2][0] ][ road[k][k2][1] ] ;//每次移动走过的长度
 			}
 		}
-		[min,sMin]=minAll(sAll);
+		var ret=minAll(sAll);
+		// [min,sMin]=minAll(sAll);
+		min=ret[0];
+		sMin=ret[1];
 
 		if(last>sMin){
 			last=sMin;
@@ -128,7 +131,11 @@ function AntSystem(C){ //传入城市坐标矩阵即可
 		NC++;
 
 	}
-	return [last,lastRoute]; //返回得到的最佳路径的过程和长度
+	var retTmp=new Array();
+	retTmp.push(last);
+	retTmp.push(lastRoute);
+	return retTmp;
+	// return [last,lastRoute]; //返回得到的最佳路径的过程和长度
 }
 	
 
